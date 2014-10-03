@@ -55,11 +55,14 @@ class Tabler{
 		$result.=$this->getStringFromRow($columns);
 
 		foreach($arr as $row){
+			$result.=$this->getBreak();
 			$result.=$this->getLine($row);
 			// arrange as per the columns
 			$row = $this->arrangeRowToColumns($row, $columns);
 			$result.=$this->getStringFromRow($row);
+
 		}
+		$result.=$this->getBreak();
 		$result.=$this->getLine($columns);
 		return $result;
 	}
